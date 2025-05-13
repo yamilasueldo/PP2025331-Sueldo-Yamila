@@ -1,5 +1,5 @@
-import { Serie } from "../../models/Serie.js";
-import { View } from "../../views/View.js";
+import { Serie } from "../models/Serie.js";
+import { View } from "../views/View.js";
 
 export class Controller {
     constructor() {

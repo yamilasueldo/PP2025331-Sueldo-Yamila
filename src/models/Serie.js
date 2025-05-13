@@ -1,4 +1,3 @@
-
 export class Serie {
 
     constructor(id, url, name, language, genres, image) {
@@ -14,7 +13,6 @@ export class Serie {
         return JSON.stringify(this);
     }
 
-
     static createFromJsonString(json) {
         const data = JSON.parse(json);
         return new Serie(
@@ -22,7 +20,7 @@ export class Serie {
             data.url,
             data.name,
             data.language,
-            data.generes,
+            data.genres,
             data.image
         );
     }
@@ -34,12 +32,12 @@ export class Serie {
         const imageLink = document.createElement('a');
         imageLink.href = this.url;
         imageLink.target = '_blank'; 
-        
+
         const imageElement = document.createElement('img');
         imageElement.src = this.image;
         imageElement.alt = this.name;
         imageElement.className = 'serie-image';
-        
+
         imageLink.appendChild(imageElement);
         serieElement.appendChild(imageLink);
 
@@ -49,16 +47,15 @@ export class Serie {
         serieElement.appendChild(nameElement);
 
         const languageElement = document.createElement('p');
-        languageElement.textContent = `Idioma: ${this.language}`;
+        languageElement.textContent =`Idioma: ${this.language}`;
         languageElement.className = 'serie-language';
         serieElement.appendChild(languageElement);
 
         const genresElement = document.createElement('p');
-        genresElement.textContent = `Géneros: ${this.generes.join(', ')}`;
+        genresElement.textContent = `Géneros: ${this.genres.join(', ')}`;
         genresElement.className = 'serie-genres';
         serieElement.appendChild(generesElement);
 
-    
         const saveButton = document.createElement('button');
         saveButton.textContent = 'guardar';
         saveButton.className = 'save-button';
@@ -70,14 +67,13 @@ export class Serie {
         return serieElement;
     }
 
-
     static guardarSerie(serie) {
         let seriesGuardadas = localStorage.getItem('seriesGuardadas');
-        
+
         if (seriesGuardadas) {
             seriesGuardadas = JSON.parse(seriesGuardadas);
             const yaExiste = seriesGuardadas.some(s => s.id === serie.id);
-            
+
             if (!yaExiste) {
                 seriesGuardadas.push(JSON.parse(serie.toJsonString()));
                 localStorage.setItem('seriesGuardadas', JSON.stringify(seriesGuardadas));
