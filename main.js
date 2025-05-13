@@ -1,7 +1,6 @@
 import { Controller } from "./src/controllers/Controller.js";
 
 let paginaActual = 1;
-const seriesPorPagina = 6;
 
 document.addEventListener('DOMContentLoaded', () => {
     const controller = new Controller();

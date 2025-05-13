@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     data.url,
                     data.name,
                     data.language,
-                    data.genres || [], // Asegurando que sea genres
+                    data.genres || [],
                     data.image
                 )
             );
