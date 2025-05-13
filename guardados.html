@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series Guardadas</title>
+    <link rel="stylesheet" href="/public/styles/style.css" />
+    <script type="module" src="guardados.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Series Guardadas</h1>
+        <nav class="main-nav">
+            <a href="index.html">Inicio</a>
+            <a href="guardados.html">Series Guardadas</a>
+        </nav>
+    </header>
+    
+    <main>
+        <nav>
+            <h2>Navegación</h2>
+            <ul>
+                <li><a href="index.html">Explorar Series</a></li>
+                <li><a href="guardados.html">Series Guardadas</a></li>
+            </ul>
+            
+            <h3>Ordenar por Nombre</h3>
+            <div class="sorting-buttons">
+                <button id="ordenar-nombre-asc">A-Z</button>
+                <button id="ordenar-nombre-desc">Z-A</button>
+            </div>
+            
+            <h3>Ordenar por Idioma</h3>
+            <div class="sorting-buttons">
+                <button id="ordenar-idioma-asc">A-Z</button>
+                <button id="ordenar-idioma-desc">Z-A</button>
+            </div>
+        </nav>
+        
+        <section id="principal">
+            <h2>Mis Series Guardadas</h2>
+            
+            <div id="series-guardadas" class="series-grid">
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
